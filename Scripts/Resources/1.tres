@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://car3iywobrof2"]
+
+[ext_resource type="Script" path="res://Scripts/sceneSkeleton.gd" id="1_tm1vx"]
+
+[resource]
+script = ExtResource("1_tm1vx")
+portalLeft = 2
+portalRight = 1
+leftEntity = "Dog"
+rightEntity = "Minotaur"
+background = "res://Sprites/test2/Heaven.jpeg"
+willDie = false

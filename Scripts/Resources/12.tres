@@ -1,0 +1,11 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://26bvghkhpfws"]
+
+[ext_resource type="Script" path="res://Scripts/sceneSkeleton.gd" id="1_6qfb7"]
+
+[resource]
+script = ExtResource("1_6qfb7")
+portalLeft = "res://Scenes/Levels/Heaven.tscn"
+portalRight = "res://Scenes/Levels/Swamp.tscn"
+leftEntity = "CAMINHO PRO SPRITE"
+rightEntity = "CAMINHO PRO SPRITE"
+background = "caminho para background"
