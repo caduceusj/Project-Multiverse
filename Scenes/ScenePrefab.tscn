@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://kaddjbyv5ypr"]
+[gd_scene load_steps=23 format=3 uid="uid://kaddjbyv5ypr"]
 
 [ext_resource type="Texture2D" uid="uid://i0mgnjxqs7t5" path="res://Sprites/test/empty scene.jpeg" id="1_bq2mg"]
 [ext_resource type="Script" path="res://Scripts/Scripts/phasePrefab.gd" id="1_qhhi1"]
@@ -9,6 +9,8 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w8b2p"]
 radius = 80.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qeb26"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2yyqk"]
 size = Vector2(1282, 92)
@@ -55,80 +57,9 @@ region = Rect2(96, 0, 16, 16)
 atlas = ExtResource("5_7utpr")
 region = Rect2(144, 0, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_jqg4s"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s5748")
-}],
-"loop": true,
-"name": &"Beetle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k7jw8")
-}],
-"loop": true,
-"name": &"BlackCat",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uytvx")
-}],
-"loop": true,
-"name": &"Bunny",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_buhsy")
-}],
-"loop": true,
-"name": &"Dog",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hfux4")
-}],
-"loop": true,
-"name": &"Mantis",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s5v7p")
-}],
-"loop": true,
-"name": &"Minotaur",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p4hhg")
-}],
-"loop": true,
-"name": &"OldLady",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bjkds")
-}],
-"loop": true,
-"name": &"PinkMantis",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0i403")
-}],
-"loop": true,
-"name": &"Pix",
-"speed": 5.0
-}]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hogv8"]
+atlas = ExtResource("5_7utpr")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0kbrn"]
 animations = [{
@@ -203,6 +134,14 @@ animations = [{
 "loop": true,
 "name": &"Pix",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hogv8")
+}],
+"loop": true,
+"name": &"WhiteCat",
+"speed": 5.0
 }]
 
 [node name="ScenePrefab" type="Node2D"]
@@ -224,6 +163,11 @@ texture = ExtResource("3_myp67")
 shape = SubResource("CircleShape2D_w8b2p")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Area2D" type="Area2D" parent="Player" groups=["Player"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+shape = SubResource("CircleShape2D_qeb26")
 
 [node name="Teto" type="StaticBody2D" parent="."]
 
@@ -265,16 +209,16 @@ shape = SubResource("CircleShape2D_l6120")
 [node name="SpriteLeft" type="AnimatedSprite2D" parent="."]
 position = Vector2(456, 520)
 scale = Vector2(10, 10)
-sprite_frames = SubResource("SpriteFrames_jqg4s")
+sprite_frames = SubResource("SpriteFrames_0kbrn")
 animation = &"Mantis"
 
 [node name="SpriteRight" type="AnimatedSprite2D" parent="."]
 position = Vector2(808, 528)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_0kbrn")
-animation = &"Dog"
+animation = &"WhiteCat"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-[connection signal="body_entered" from="LeftPortal" to="." method="_on_left_portal_body_entered"]
-[connection signal="body_entered" from="RightPortal" to="." method="_on_right_portal_body_entered"]
+[connection signal="area_entered" from="LeftPortal" to="." method="_on_left_portal_area_entered"]
+[connection signal="area_entered" from="RightPortal" to="." method="_on_right_portal_area_entered"]

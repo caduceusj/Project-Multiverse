@@ -10,15 +10,14 @@ var portalLeft = ""
 var portalRight = ""
 
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	PHASE_INFO = load("res://Scripts/Resources/"+State.currentPhase+".tres")
+	PHASE_INFO = load("res://Scripts/Resources/"+str(State.currentPhase)+".tres")
 	portalLeft = PHASE_INFO.portalLeft
 	portalRight = PHASE_INFO.portalRight
 	spriteLeft.play(PHASE_INFO.leftEntity)
 	spriteRight.play(PHASE_INFO.rightEntity)
-	texture = load(PHASE_INFO.background)
+	texture.texture = load(PHASE_INFO.background)
 	
 	
 
@@ -27,10 +26,15 @@ func _process(delta):
 	pass
 
 
-func _on_left_portal_body_entered(body):
-	State.currentPhase = 2
-	EzTransitions.change_scene(portalLeft)
 
 
-func _on_right_portal_body_entered(body):
-	EzTransitions.change_scene(portalRight)
+func _on_right_portal_area_entered(area):
+	if(area.is_in_group("Player")):
+		State.currentPhase = 3
+		get_tree().reload_current_scene()
+
+
+func _on_left_portal_area_entered(area):
+	if(area.is_in_group("Player")):
+		State.currentPhase = 2
+		get_tree().reload_current_scene()
