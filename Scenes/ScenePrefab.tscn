@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://kaddjbyv5ypr"]
+[gd_scene load_steps=24 format=3 uid="uid://kaddjbyv5ypr"]
 
 [ext_resource type="Texture2D" uid="uid://i0mgnjxqs7t5" path="res://Sprites/test/empty scene.jpeg" id="1_bq2mg"]
 [ext_resource type="Script" path="res://Scripts/Scripts/phasePrefab.gd" id="1_qhhi1"]
@@ -48,6 +48,10 @@ region = Rect2(48, 0, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_p4hhg"]
 atlas = ExtResource("6_nrvv5")
 region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8hye"]
+atlas = ExtResource("5_7utpr")
+region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjkds"]
 atlas = ExtResource("5_7utpr")
@@ -117,6 +121,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"OldLady",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8hye")
+}],
+"loop": true,
+"name": &"Pegasus",
 "speed": 5.0
 }, {
 "frames": [{
@@ -216,9 +228,19 @@ animation = &"Mantis"
 position = Vector2(808, 528)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_0kbrn")
-animation = &"WhiteCat"
+animation = &"Pegasus"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Morto" type="Label" parent="."]
+visible = false
+offset_left = 424.0
+offset_top = 224.0
+offset_right = 464.0
+offset_bottom = 247.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "MORTO"
 
 [connection signal="area_entered" from="LeftPortal" to="." method="_on_left_portal_area_entered"]
 [connection signal="area_entered" from="RightPortal" to="." method="_on_right_portal_area_entered"]

@@ -1,3 +1,3 @@
 extends Node
 
-var currentPhase = 1
+var currentPhase = 0

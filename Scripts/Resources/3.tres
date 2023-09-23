@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_n3x8i")
-portalLeft = 6
-portalRight = 3
-leftEntity = "Mantis"
-rightEntity = "Beetle"
+portalLeft = 5
+portalRight = 1
+leftEntity = "PinkMantis"
+rightEntity = "Mantis"
 background = "res://Sprites/test2/Swamp.jpeg"
 willDie = false

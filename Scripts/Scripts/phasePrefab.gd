@@ -23,18 +23,21 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
-
+	if(PHASE_INFO.willDie):
+		$Morto.show()
+	else:
+		$Morto.hide()
+	
 
 
 
 func _on_right_portal_area_entered(area):
 	if(area.is_in_group("Player")):
-		State.currentPhase = 3
+		State.currentPhase = portalRight
 		get_tree().reload_current_scene()
 
 
 func _on_left_portal_area_entered(area):
 	if(area.is_in_group("Player")):
-		State.currentPhase = 2
+		State.currentPhase = portalLeft
 		get_tree().reload_current_scene()

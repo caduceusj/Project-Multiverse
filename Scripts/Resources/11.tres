@@ -4,8 +4,9 @@
 
 [resource]
 script = ExtResource("1_3ckjs")
-portalLeft = "res://Scenes/Levels/Heaven.tscn"
-portalRight = "res://Scenes/Levels/Swamp.tscn"
-leftEntity = "CAMINHO PRO SPRITE"
-rightEntity = "CAMINHO PRO SPRITE"
-background = "caminho para background"
+portalLeft = 0
+portalRight = 14
+leftEntity = "OldLady"
+rightEntity = "Bunny"
+background = "res://Sprites/test2/Rich.jpeg"
+willDie = false

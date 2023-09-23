@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bqmc58jytkwf1"]
+
+[ext_resource type="Script" path="res://Scripts/sceneSkeleton.gd" id="1_scy40"]
+
+[resource]
+script = ExtResource("1_scy40")
+portalLeft = 1
+portalRight = 2
+leftEntity = "BlackCat"
+rightEntity = "WhiteCat"
+background = "res://Sprites/test/empty scene.jpeg"
+willDie = false

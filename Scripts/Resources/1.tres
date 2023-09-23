@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_tm1vx")
-portalLeft = 2
-portalRight = 3
-leftEntity = "WhiteCat"
-rightEntity = "BlackCat"
-background = "res://Sprites/test2/Rich.jpeg"
+portalLeft = 3
+portalRight = 4
+leftEntity = "Minotaur"
+rightEntity = "Dog"
+background = "res://Sprites/test2/Heaven.jpeg"
 willDie = false

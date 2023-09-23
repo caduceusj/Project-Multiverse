@@ -4,8 +4,9 @@
 
 [resource]
 script = ExtResource("1_fob1n")
-portalLeft = "res://Scenes/Levels/Heaven.tscn"
-portalRight = "res://Scenes/Levels/Swamp.tscn"
-leftEntity = "CAMINHO PRO SPRITE"
-rightEntity = "CAMINHO PRO SPRITE"
-background = "caminho para background"
+portalLeft = 0
+portalRight = 0
+leftEntity = "Bunny"
+rightEntity = "Bunny"
+background = "res://Sprites/test2/Rich.jpeg"
+willDie = true

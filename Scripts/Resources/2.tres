@@ -4,9 +4,9 @@
 
 [resource]
 script = ExtResource("1_h7ijd")
-portalLeft = 2
-portalRight = 1
-leftEntity = "Minotaur"
-rightEntity = "Dog"
-background = "res://Sprites/test2/Heaven.jpeg"
+portalLeft = 6
+portalRight = 8
+leftEntity = "Mantis"
+rightEntity = "Beetle"
+background = "res://Sprites/test2/Swamp.jpeg"
 willDie = false
