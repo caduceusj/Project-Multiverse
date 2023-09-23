@@ -273,7 +273,7 @@ scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_0kbrn")
 animation = &"Pegasus"
 
-[node name="Area2DRight" type="Area2D" parent="CharacterRight" groups=["Target"]]
+[node name="Area2DRight" type="Area2D" parent="CharacterRight"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterRight/Area2DRight"]
 position = Vector2(740.5, 529)
