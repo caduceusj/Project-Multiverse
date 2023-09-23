@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://kaddjbyv5ypr"]
+[gd_scene load_steps=24 format=3 uid="uid://kaddjbyv5ypr"]
 
 [ext_resource type="Texture2D" uid="uid://i0mgnjxqs7t5" path="res://Sprites/test/empty scene.jpeg" id="1_bq2mg"]
 [ext_resource type="Script" path="res://Scripts/Scripts/phasePrefab.gd" id="1_qhhi1"]
@@ -156,12 +156,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ijtdx"]
-size = Vector2(274, 159)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lygi"]
-size = Vector2(159, 147)
-
 [node name="ScenePrefab" type="Node2D"]
 script = ExtResource("1_qhhi1")
 
@@ -243,27 +237,11 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "MORTO"
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(-141, 15)
-
-[node name="SpriteLeft" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="SpriteLeft" type="AnimatedSprite2D" parent="."]
 position = Vector2(456, 520)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_0kbrn")
 animation = &"Mantis"
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D" groups=["Target"]]
-position = Vector2(291, 575)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-position = Vector2(223, -54.5)
-shape = SubResource("RectangleShape2D_ijtdx")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(453.5, 520.5)
-shape = SubResource("RectangleShape2D_7lygi")
-
 [connection signal="area_entered" from="LeftPortal" to="." method="_on_left_portal_area_entered"]
 [connection signal="area_entered" from="RightPortal" to="." method="_on_right_portal_area_entered"]
-[connection signal="area_entered" from="CharacterBody2D/Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="CharacterBody2D/Area2D" to="." method="_on_area_2d_area_exited"]
