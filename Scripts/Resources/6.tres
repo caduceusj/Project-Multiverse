@@ -9,4 +9,6 @@ portalRight = 2
 leftEntity = "Pegasus"
 rightEntity = "Minotaur"
 background = "res://Sprites/test2/Heaven.jpeg"
+spriteScaleLeft = 1.0
+spriteScaleRight = 1.0
 willDie = false

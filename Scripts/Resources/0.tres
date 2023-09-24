@@ -9,4 +9,6 @@ portalRight = 2
 leftEntity = "BlackCat"
 rightEntity = "WhiteCat"
 background = "res://Sprites/test/empty scene.jpeg"
+spriteScaleLeft = 1.0
+spriteScaleRight = 1.0
 willDie = false

@@ -9,4 +9,5 @@ portalRight = 9
 leftEntity = "Mantis"
 rightEntity = "Beetle"
 background = "res://Sprites/test2/Swamp.jpeg"
+spriteScale = "ESCLA DO SPRITE"
 willDie = false

@@ -9,4 +9,6 @@ portalRight = 0
 leftEntity = "Dog"
 rightEntity = "Dog"
 background = "res://Sprites/test/Galaxy.jpg"
+spriteSideLeft = -1
+spriteSideRight = 1
 willDie = false
