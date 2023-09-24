@@ -11,5 +11,5 @@ rightEntity = "Bunny"
 background = "res://Sprites/test2/Rich.jpeg"
 spriteSideLeft = 1
 spriteSideRight = 1
-world = 4
+world = 3
 willDie = false

@@ -26,15 +26,18 @@ func _ready():
 	spriteRight.scale.x = PHASE_INFO.spriteSideRight
 	texture.texture = load(PHASE_INFO.background)
 	
-	if(PHASE_INFO.world == 0):
-		#$Nuvens.visible = true
-		pass
+	if PHASE_INFO.world == 0:
+		$Inicio.visible = true
+		$LeftPortal.position.x = 200
+		$RightPortal.position.x = 1150
 	elif PHASE_INFO.world == 1:
 		$Nuvens.visible = true
+		$Pilares.visible = true
 	elif PHASE_INFO.world == 2:
 		$Pantano.visible = true
+		$Arvores.visible = true
 	elif PHASE_INFO.world == 3:
-		$Rico.visible = true
+		$Chique.visible = true
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

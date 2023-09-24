@@ -1,0 +1,20 @@
+[remap]
+
+importer="YATI"
+type="PackedScene"
+uid="uid://b7124xkshq52h"
+path="res://.godot/imported/chique.tmx-524202ef13c2065aea1bf59355529e17.tscn"
+
+[deps]
+
+source_file="res://Chique Final/chique.tmx"
+dest_files=["res://.godot/imported/chique.tmx-524202ef13c2065aea1bf59355529e17.tscn"]
+
+[params]
+
+use_tilemap_layers=true
+use_default_filter=true
+add_class_as_metadata=true
+map_wangset_to_terrain=true
+post_processor=""
+save_tileset_to=""

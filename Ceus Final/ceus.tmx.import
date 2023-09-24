@@ -1,0 +1,20 @@
+[remap]
+
+importer="YATI"
+type="PackedScene"
+uid="uid://cau3yxkw08gc6"
+path="res://.godot/imported/ceus.tmx-7999a4956e1afc41903deebc2842f18d.tscn"
+
+[deps]
+
+source_file="res://Ceus Final/ceus.tmx"
+dest_files=["res://.godot/imported/ceus.tmx-7999a4956e1afc41903deebc2842f18d.tscn"]
+
+[params]
+
+use_tilemap_layers=true
+use_default_filter=true
+add_class_as_metadata=true
+map_wangset_to_terrain=true
+post_processor=""
+save_tileset_to=""

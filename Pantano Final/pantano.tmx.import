@@ -1,0 +1,20 @@
+[remap]
+
+importer="YATI"
+type="PackedScene"
+uid="uid://dydx6wdrry5fv"
+path="res://.godot/imported/pantano.tmx-3d31a7a2cf4ff848ac106ccce54e5439.tscn"
+
+[deps]
+
+source_file="res://Pantano Final/pantano.tmx"
+dest_files=["res://.godot/imported/pantano.tmx-3d31a7a2cf4ff848ac106ccce54e5439.tscn"]
+
+[params]
+
+use_tilemap_layers=true
+use_default_filter=true
+add_class_as_metadata=true
+map_wangset_to_terrain=true
+post_processor=""
+save_tileset_to=""
