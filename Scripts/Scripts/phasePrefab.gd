@@ -32,6 +32,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	$LeftPortal/AnimatedSprite2D.play("default")
+	$RightPortal/AnimatedSprite2D.play("default")
+	
 	if(PHASE_INFO.willDie):
 		$Morto.show()
 	else:
