@@ -870,7 +870,7 @@ sources/3 = SubResource("TileSetAtlasSource_ntlfd")
 sources/4 = SubResource("TileSetAtlasSource_alb3w")
 sources/5 = SubResource("TileSetAtlasSource_mgs01")
 
-[node name="ScenePrefab" type="Node2D"]
+[node name="ScenePrefab2" type="Node2D"]
 script = ExtResource("1_qhhi1")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -1013,9 +1013,20 @@ wall_min_slide_angle = 0.0
 [node name="SpriteRight" type="AnimatedSprite2D" parent="CharacterRight"]
 position = Vector2(808, 550)
 sprite_frames = SubResource("SpriteFrames_0kbrn")
-animation = &"PegasusIdle"
+animation = &"Beetle"
 
 [node name="PointLight2D" type="PointLight2D" parent="CharacterRight/SpriteRight"]
+position = Vector2(-1558, -27)
+scale = Vector2(0.25, 0.25)
+color = Color(1, 0, 0.898039, 1)
+texture = ExtResource("15_qqrwm")
+
+[node name="SpriteRight2" type="AnimatedSprite2D" parent="CharacterRight"]
+position = Vector2(808, 550)
+sprite_frames = SubResource("SpriteFrames_0kbrn")
+animation = &"Beetle"
+
+[node name="PointLight2D" type="PointLight2D" parent="CharacterRight/SpriteRight2"]
 position = Vector2(-1558, -27)
 scale = Vector2(0.25, 0.25)
 color = Color(1, 0, 0.898039, 1)

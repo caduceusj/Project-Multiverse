@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://daxndyb2hd3kj"
+path="res://.godot/imported/Musica do Pantano (1).wav-2d4273a966825dda5412e78e15c0dabf.sample"
+
+[deps]
+
+source_file="res://Pantano Final/Musica do Pantano (1).wav"
+dest_files=["res://.godot/imported/Musica do Pantano (1).wav-2d4273a966825dda5412e78e15c0dabf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

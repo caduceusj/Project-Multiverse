@@ -15,7 +15,7 @@ func _process(_delta):
 
 func _on_left_portal_area_entered(area):
 	if(area.is_in_group("Player")):
-		get_tree().change_scene_to_file("res://Scenes/ScenePrefab.tscn")
+		get_tree().change_scene_to_file("res://Scenes/scene_prefab2.tscn")
 
 
 

@@ -17,6 +17,10 @@ var rightExist = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if(State.currentPhase == 14):
+		get_tree().change_scene_to_file("res://Scenes/morteCoelho.tscn")
+	elif(State.currentPhase == 5):
+		get_tree().change_scene_to_file("res://Scenes/node_2d2.tscn")
 	PHASE_INFO = load("res://Scripts/Resources/"+str(State.currentPhase)+".tres")
 	portalLeft = PHASE_INFO.portalLeft
 	portalRight = PHASE_INFO.portalRight
@@ -24,20 +28,30 @@ func _ready():
 	spriteRight.get_child(0).play(PHASE_INFO.rightEntity)
 	spriteLeft.scale.x = PHASE_INFO.spriteSideLeft
 	spriteRight.scale.x = PHASE_INFO.spriteSideRight
-	texture.texture = load(PHASE_INFO.background)
 	
 	if PHASE_INFO.world == 0:
 		$Inicio.visible = true
 		$LeftPortal.position.x = 200
 		$RightPortal.position.x = 1150
+		
 	elif PHASE_INFO.world == 1:
 		$Nuvens.visible = true
 		$Pilares.visible = true
+		$AudioStreamPlayer2D.playing = true
+	
 	elif PHASE_INFO.world == 2:
 		$Pantano.visible = true
 		$Arvores.visible = true
+		$AudioStreamPlayer2D2.playing = true
+		
 	elif PHASE_INFO.world == 3:
 		$Chique.visible = true
+		$AudioStreamPlayer2D3.playing = true
+	elif PHASE_INFO.world == 14:
+		get_tree().change_scene_to_file("res://Scenes/morteCoelho.tscn")
+		
+	elif PHASE_INFO.world == 5:
+		get_tree().change_scene_to_file("res://Scenes/node_2d2.tscn")
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

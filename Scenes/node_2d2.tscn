@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://cawn01y3buofj"]
+
+[ext_resource type="Script" path="res://Scripts/morte.gd" id="1_j6h68"]
+[ext_resource type="Texture2D" uid="uid://hwel2poahqlj" path="res://Sprites/mantis atacante .png" id="2_12mbu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2qay"]
+atlas = ExtResource("2_12mbu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1cdg"]
+atlas = ExtResource("2_12mbu")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_irkjo"]
+atlas = ExtResource("2_12mbu")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bny01"]
+atlas = ExtResource("2_12mbu")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2k40t"]
+atlas = ExtResource("2_12mbu")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_of7s4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2qay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1cdg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irkjo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bny01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2k40t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_j6h68")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 653.0
+offset_bottom = 369.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(247, 227)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_of7s4")
+frame_progress = 0.0463914
+
+[node name="Label" type="Label" parent="."]
+offset_left = 132.0
+offset_top = 43.0
+offset_right = 489.0
+offset_bottom = 115.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "VOCÊ MORREU"

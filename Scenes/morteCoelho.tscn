@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://dn38idg0ewwx8"]
+
+[ext_resource type="Script" path="res://Scripts/morte.gd" id="1_0wbvo"]
+[ext_resource type="Texture2D" uid="uid://dnnp3np13hk6c" path="res://Sprites/coelhinoMalvado.png" id="2_164so"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cttl"]
+atlas = ExtResource("2_164so")
+region = Rect2(0, 0, 96, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ridbn"]
+atlas = ExtResource("2_164so")
+region = Rect2(96, 0, 96, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojgyx"]
+atlas = ExtResource("2_164so")
+region = Rect2(192, 0, 96, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sebss"]
+atlas = ExtResource("2_164so")
+region = Rect2(288, 0, 96, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqcby"]
+atlas = ExtResource("2_164so")
+region = Rect2(384, 0, 96, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26gkx"]
+atlas = ExtResource("2_164so")
+region = Rect2(480, 0, 96, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_symg4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cttl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ridbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojgyx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sebss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqcby")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26gkx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_0wbvo")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 653.0
+offset_bottom = 369.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(247, 227)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_symg4")
+frame_progress = 0.66247
+
+[node name="Label" type="Label" parent="."]
+offset_left = 132.0
+offset_top = 43.0
+offset_right = 489.0
+offset_bottom = 115.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "VOCÊ MORREU"
