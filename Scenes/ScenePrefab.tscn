@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://kaddjbyv5ypr"]
+[gd_scene load_steps=55 format=3 uid="uid://kaddjbyv5ypr"]
 
 [ext_resource type="Script" path="res://Scripts/Scripts/phasePrefab.gd" id="1_qhhi1"]
 [ext_resource type="Texture2D" uid="uid://bj1fuc1hqal5r" path="res://Sprites/MundodosCeus/Backgrounds/background Ceus.png" id="2_q5wgq"]
@@ -26,7 +26,7 @@ size = Vector2(1282, 92)
 size = Vector2(41, 294)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l6120"]
-radius = 80.399
+radius = 22.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2uxp6"]
 atlas = ExtResource("5_cgbks")
@@ -71,6 +71,26 @@ animations = [{
 "name": &"default",
 "speed": 7.0
 }]
+
+[sub_resource type="Curve" id="Curve_y68su"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.987952, -0.768421), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_3q2lm"]
+curve = SubResource("Curve_y68su")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ljvbt"]
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 70.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 2.0
+color = Color(1, 0.219608, 1, 1)
+hue_variation_curve = SubResource("CurveTexture_3q2lm")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s5748"]
 atlas = ExtResource("5_7utpr")
@@ -453,25 +473,34 @@ position = Vector2(640, 670)
 shape = SubResource("RectangleShape2D_2yyqk")
 
 [node name="LeftPortal" type="Area2D" parent="."]
-position = Vector2(-193, 504)
+position = Vector2(-193, 553)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPortal"]
+position = Vector2(-5, 0)
 shape = SubResource("CircleShape2D_l6120")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LeftPortal"]
+scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_y43tt")
 
 [node name="RightPortal" type="Area2D" parent="."]
-position = Vector2(1368, 504)
+position = Vector2(1365, 526)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightPortal"]
-position = Vector2(83, 0)
+position = Vector2(88, 31)
 shape = SubResource("CircleShape2D_l6120")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RightPortal"]
 position = Vector2(84, 34)
 sprite_frames = SubResource("SpriteFrames_rtwct")
 frame_progress = 0.110801
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="RightPortal"]
+position = Vector2(88, 38)
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_ljvbt")
+explosiveness = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

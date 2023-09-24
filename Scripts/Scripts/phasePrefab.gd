@@ -49,6 +49,9 @@ func _process(delta):
 		spriteRight.move_and_slide()
 		
 func _on_right_portal_area_entered(area):
+	$RightPortal/GPUParticles2D.emitting = true
+	
+	
 	if(area.is_in_group("Player")):
 		State.currentPhase = portalRight
 		get_tree().reload_current_scene()
