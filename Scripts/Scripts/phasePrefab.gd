@@ -11,12 +11,18 @@ var portalLeft = ""
 var portalRight = ""
 var leftVelocity =  0
 var rightVelocity = 0
-
 var leftExist = true
 var rightExist = true
 
+
+var isPlayingRight = false
+var isPlayingLeft = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$LeftPortal/AnimatedSprite2D.play("default")
+	$RightPortal/AnimatedSprite2D.play("default")
+	
 	PHASE_INFO = load("res://Scripts/Resources/"+str(State.currentPhase)+".tres")
 	portalLeft = PHASE_INFO.portalLeft
 	portalRight = PHASE_INFO.portalRight
@@ -25,7 +31,7 @@ func _ready():
 	spriteLeft.scale.x = PHASE_INFO.spriteSideLeft
 	spriteRight.scale.x = PHASE_INFO.spriteSideRight
 	texture.texture = load(PHASE_INFO.background)
-	
+
 	if(PHASE_INFO.world == 0):
 		#$Nuvens.visible = true
 		pass
@@ -35,28 +41,45 @@ func _ready():
 		$Pantano.visible = true
 	elif PHASE_INFO.world == 3:
 		$Rico.visible = true
-	
+
+
+func _physics_process(delta):
+	if(isInAreaRight):
+		spriteRight.velocity.x += rightVelocity
+		rightVelocity += 0.020
+		spriteRight.move_and_slide()
+		print("BBBBBBBBBBBB")
+	elif(rightExist):
+		spriteRight.velocity.x = 0
+
+			
+	if(isInArea):
+		spriteLeft.velocity.x -= leftVelocity
+		leftVelocity += 0.020
+		print("AAAAAAAAAAA")
+		spriteLeft.move_and_slide()
+	elif(leftExist):
+		spriteLeft.velocity.x = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$LeftPortal/AnimatedSprite2D.play(PHASE_INFO.leftEntity + "Idle")
-	$RightPortal/AnimatedSprite2D.play(PHASE_INFO.rightEntity + "Idle")
-	
 	if(PHASE_INFO.willDie):
 		$Morto.show()
 	else:
 		$Morto.hide()
 	
-	if(isInArea):
-		$CharacterLeft/SpriteLeft.play(PHASE_INFO.leftEntity)
+
 		
-		spriteLeft.velocity.x -= leftVelocity
-		leftVelocity += 0.020
-		spriteLeft.move_and_slide()
-	elif(leftExist):
-		$CharacterLeft/SpriteLeft.play(PHASE_INFO.rightEntity + "Idle")
-		if(spriteLeft.velocity.x < 0):
-			spriteLeft.velocity.x = 0
+		
+		
+	if(leftExist):
+		if(spriteLeft.velocity.x == 0):
+			$CharacterLeft/SpriteLeft.play(PHASE_INFO.leftEntity+"Idle")
+		else:
+			$CharacterLeft/SpriteLeft.play(PHASE_INFO.leftEntity)
+	if(rightExist):
+		if(spriteRight.velocity.x == 0):
+			$CharacterRight/SpriteRight.play(PHASE_INFO.rightEntity+"Idle")
 		else:
 			spriteLeft.velocity.x -= 0.01
 
@@ -100,7 +123,6 @@ func _on_area_2d_area_exited(area):
 	if(area.is_in_group("Player")):
 		isInArea = false
 		leftExist = false
-		leftVelocity = -0.5
 
 func _on_area_2d_right_area_entered(area):
 	if(area.is_in_group("Player")):
@@ -110,4 +132,3 @@ func _on_area_2d_right_area_exited(area):
 	if(area.is_in_group("Player")):
 		isInAreaRight = false
 		rightExist = false
-		rightVelocity = -0.5
