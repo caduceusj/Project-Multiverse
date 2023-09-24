@@ -1,25 +1,26 @@
 extends Control
 
-var startButton: Button
-var quitButton: Button
 
 func _ready():
-	# Carrega os botões
-	startButton = $StartButton
-	quitButton = $QuitButton
-
-	startButton.grab_focus()
+	pass
 
 func _process(_delta):
-	if Input.is_action_just_pressed("ui_right"):
-		quitButton.grab_focus()
-	elif Input.is_action_just_pressed("ui_left"):
-		startButton.grab_focus()
+	$RightPortal/AnimatedSprite2D.play("default")
+	$LeftPortal/AnimatedSprite2D.play("default")
 
 
-func _on_start_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/ScenePrefab.tscn")
+
+	#get_tree().quit()  
 
 
-func _on_quit_button_pressed():
-	get_tree().quit()  
+func _on_left_portal_area_entered(area):
+	if(area.is_in_group("Player")):
+		get_tree().change_scene_to_file("res://Scenes/ScenePrefab.tscn")
+
+
+
+
+
+func _on_right_portal_area_entered(area):
+	if(area.is_in_group("Player")):
+		get_tree().quit()  

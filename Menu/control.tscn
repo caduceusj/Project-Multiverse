@@ -1,6 +1,160 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmj7aui2hh33v"]
+[gd_scene load_steps=29 format=3 uid="uid://cmj7aui2hh33v"]
 
 [ext_resource type="Script" path="res://Menu/control.gd" id="1_nx8n4"]
+[ext_resource type="FontFile" uid="uid://buyo4orhertfs" path="res://Fontes/SuperFuntime-3zpLX.ttf" id="2_5y156"]
+[ext_resource type="Texture2D" uid="uid://bl12r4blja8qv" path="res://Sprites/MundodosCeus/Objetos/portal.png" id="2_n06l0"]
+[ext_resource type="Script" path="res://Scripts/Scripts/Player.gd" id="4_4k0bo"]
+[ext_resource type="Texture2D" uid="uid://c4cye33yy075r" path="res://Sprites/Player/IdleAnim.png" id="5_ohien"]
+[ext_resource type="Texture2D" uid="uid://bdy5qq0ulx7mn" path="res://Sprites/Player/WalkAnim.png" id="6_xgoh8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x11lu"]
+radius = 80.399
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2uxp6"]
+atlas = ExtResource("2_n06l0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhqci"]
+atlas = ExtResource("2_n06l0")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_26dg4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2uxp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhqci")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qx4f8"]
+atlas = ExtResource("2_n06l0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqyiy"]
+atlas = ExtResource("2_n06l0")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sq7h8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qx4f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqyiy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5dk3"]
+atlas = ExtResource("5_ohien")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqw0a"]
+atlas = ExtResource("5_ohien")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mytcr"]
+atlas = ExtResource("5_ohien")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u62av"]
+atlas = ExtResource("5_ohien")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21ati"]
+atlas = ExtResource("5_ohien")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc44o"]
+atlas = ExtResource("6_xgoh8")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyvr6"]
+atlas = ExtResource("6_xgoh8")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7mhd"]
+atlas = ExtResource("6_xgoh8")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3ead"]
+atlas = ExtResource("6_xgoh8")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb3qw"]
+atlas = ExtResource("6_xgoh8")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ort3e"]
+atlas = ExtResource("6_xgoh8")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52fjq"]
+atlas = ExtResource("6_xgoh8")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tx6kn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5dk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqw0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mytcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u62av")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21ati")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc44o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qyvr6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7mhd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3ead")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb3qw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ort3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52fjq")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s1q06"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uscj2"]
+radius = 63.0079
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -11,28 +165,101 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_nx8n4")
 
-[node name="StartButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -4.0
-offset_right = 8.0
-offset_bottom = 4.0
-grow_vertical = 2
+[node name="LeftPortal" type="Area2D" parent="."]
+position = Vector2(41, 233)
 
-[node name="QuitButton" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -8.0
-offset_top = -4.0
-offset_bottom = 4.0
-grow_horizontal = 0
-grow_vertical = 2
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftPortal"]
+shape = SubResource("CircleShape2D_x11lu")
 
-[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="LeftPortal"]
+position = Vector2(2, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_26dg4")
+flip_h = true
+
+[node name="RightPortal" type="Area2D" parent="."]
+position = Vector2(513, 233)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightPortal"]
+position = Vector2(83, 0)
+shape = SubResource("CircleShape2D_x11lu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RightPortal"]
+position = Vector2(84, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_sq7h8")
+
+[node name="Controles" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.0
+offset_top = 12.0
+offset_right = 134.0
+offset_bottom = 189.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_5y156")
+theme_override_font_sizes/font_size = 50
+text = "controles
+<-	
+->"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(320, 260)
+script = ExtResource("4_4k0bo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_tx6kn")
+animation = &"Idle"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
+scale = Vector2(1.2, 2.2)
+shape = SubResource("CircleShape2D_s1q06")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-11, -6)
+limit_left = 0
+limit_top = 0
+limit_right = 640
+limit_bottom = 350
+
+[node name="Area2D" type="Area2D" parent="Player" groups=["Player"]]
+scale = Vector2(1.2, 2.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+position = Vector2(-0.833313, -3.63637)
+scale = Vector2(0.833333, 0.454545)
+shape = SubResource("CircleShape2D_uscj2")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(640, 3)
+
+[node name="Iniciar Jogo" type="Label" parent="."]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 35.0418
+offset_right = 127.0
+offset_bottom = 111.042
+rotation = -0.000273335
+theme_override_fonts/font = ExtResource("2_5y156")
+theme_override_font_sizes/font_size = 30
+text = "Iniciar 
+jogo"
+horizontal_alignment = 1
+
+[node name="Saída" type="Label" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 50.0
+offset_right = 713.0
+offset_bottom = 89.0
+rotation = -0.000273335
+theme_override_fonts/font = ExtResource("2_5y156")
+theme_override_font_sizes/font_size = 30
+text = "Saída"
+
+[connection signal="area_entered" from="LeftPortal" to="." method="_on_left_portal_area_entered"]
+[connection signal="area_entered" from="RightPortal" to="." method="_on_right_portal_area_entered"]
