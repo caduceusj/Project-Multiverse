@@ -9,4 +9,7 @@ portalRight = 1
 leftEntity = "PinkMantis"
 rightEntity = "Mantis"
 background = "res://Sprites/test2/Swamp.jpeg"
+spriteSideLeft = 1
+spriteSideRight = 1
+world = 2
 willDie = false

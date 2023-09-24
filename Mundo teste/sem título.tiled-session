@@ -1,0 +1,35 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "tile errado dnv.tsx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "Cena.tmx": {
+            "scale": 1.00640625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 480.9191119391399,
+                "y": 320.44713553796
+            }
+        },
+        "tile errado dnv.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "C:/Users/gygag/OneDrive/Área de Trabalho/Mundo teste",
+    "map.lastUsedFormat": "tmx",
+    "openFiles": [
+        "Cena.tmx",
+        "tile errado dnv.tsx"
+    ],
+    "project": "sem título.tiled-project",
+    "recentFiles": [
+        "Cena.tmx",
+        "tile errado dnv.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}

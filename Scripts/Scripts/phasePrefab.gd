@@ -4,7 +4,6 @@ extends Node2D
 @onready var texture = get_node("TextureRect")
 @onready var spriteLeft = $CharacterLeft
 @onready var spriteRight = $CharacterRight
-#@onready var 
 
 var isInArea = false
 var isInAreaRight = false

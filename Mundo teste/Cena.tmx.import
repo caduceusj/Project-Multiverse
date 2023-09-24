@@ -1,0 +1,20 @@
+[remap]
+
+importer="YATI"
+type="PackedScene"
+uid="uid://cwqi12v0ixq2j"
+path="res://.godot/imported/Cena.tmx-c573f4db8c4272809013630ae0bf043a.tscn"
+
+[deps]
+
+source_file="res://Mundo teste/Cena.tmx"
+dest_files=["res://.godot/imported/Cena.tmx-c573f4db8c4272809013630ae0bf043a.tscn"]
+
+[params]
+
+use_tilemap_layers=true
+use_default_filter=true
+add_class_as_metadata=true
+map_wangset_to_terrain=true
+post_processor=""
+save_tileset_to=""

@@ -9,4 +9,7 @@ portalRight = 0
 leftEntity = "Pegasus"
 rightEntity = "Pegasus"
 background = "res://Sprites/test2/Heaven.jpeg"
+spriteSideLeft = 1
+spriteSideRight = 1
+world = 1
 willDie = true

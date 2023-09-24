@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://kaddjbyv5ypr"]
+[gd_scene load_steps=52 format=3 uid="uid://kaddjbyv5ypr"]
 
 [ext_resource type="Script" path="res://Scripts/Scripts/phasePrefab.gd" id="1_qhhi1"]
 [ext_resource type="Texture2D" uid="uid://bj1fuc1hqal5r" path="res://Sprites/MundodosCeus/Backgrounds/background Ceus.png" id="2_q5wgq"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bu6inw10tc861" path="res://Sprites/MundodosCeus/TileMaps/Estrada.png" id="7_bqi8d"]
 [ext_resource type="Texture2D" uid="uid://bpq3gb3opp7na" path="res://Sprites/MundodosCeus/TileMaps/Nuvens.png" id="10_rheaj"]
 [ext_resource type="Texture2D" uid="uid://dnkfwqsm2wwjv" path="res://Sprites/MundodosCeus/Objetos/pilastraGrega.png" id="11_wog3g"]
+[ext_resource type="PackedScene" uid="uid://cwqi12v0ixq2j" path="res://Mundo teste/Cena.tmx" id="13_x4mqa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w8b2p"]
 radius = 80.0
@@ -534,9 +535,9 @@ layer_0/tile_data = PackedInt32Array(2555904, 0, 0, 2555905, 0, 0, 2555906, 0, 0
 visible = false
 format = 2
 
-[node name="Rico" type="TileMap" parent="."]
+[node name="Rico" parent="." instance=ExtResource("13_x4mqa")]
 visible = false
-format = 2
+position = Vector2(187, 274)
 
 [connection signal="area_entered" from="LeftPortal" to="." method="_on_left_portal_area_entered"]
 [connection signal="area_entered" from="RightPortal" to="." method="_on_right_portal_area_entered"]

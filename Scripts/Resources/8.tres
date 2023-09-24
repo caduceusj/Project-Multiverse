@@ -9,4 +9,7 @@ portalRight = 10
 leftEntity = "Minotaur"
 rightEntity = "Dog"
 background = "res://Sprites/test2/Heaven.jpeg"
+spriteSideLeft = 1
+spriteSideRight = 1
+world = 1
 willDie = false
