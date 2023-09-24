@@ -1,11 +1,12 @@
-[gd_scene load_steps=55 format=3 uid="uid://kaddjbyv5ypr"]
+[gd_scene load_steps=69 format=3 uid="uid://kaddjbyv5ypr"]
 
 [ext_resource type="Script" path="res://Scripts/Scripts/phasePrefab.gd" id="1_qhhi1"]
 [ext_resource type="Texture2D" uid="uid://bj1fuc1hqal5r" path="res://Sprites/MundodosCeus/Backgrounds/background Ceus.png" id="2_q5wgq"]
 [ext_resource type="Script" path="res://Scripts/Scripts/Player.gd" id="3_bfatd"]
-[ext_resource type="Texture2D" uid="uid://lrs6bufgisdr" path="res://Sprites/protagonista.png" id="4_tktij"]
+[ext_resource type="Texture2D" uid="uid://byy628ao4bn7f" path="res://Sprites/IdleAnim.png" id="4_5phsk"]
 [ext_resource type="Texture2D" uid="uid://eqrpbuwk44by" path="res://Sprites/TestEntitites/PlaceholderSpriteSheets.png" id="5_7utpr"]
 [ext_resource type="Texture2D" uid="uid://bl12r4blja8qv" path="res://Sprites/MundodosCeus/Objetos/portal.png" id="5_cgbks"]
+[ext_resource type="Texture2D" uid="uid://djmp0rsyf26ui" path="res://Sprites/WalkAnim.png" id="5_qqone"]
 [ext_resource type="Texture2D" uid="uid://dkcpfhkthoj47" path="res://Sprites/MundodosCeus/Sprites/MinotauroAndando.png" id="6_fk3p1"]
 [ext_resource type="Texture2D" uid="uid://nchr1xn8hmtc" path="res://Sprites/TestEntitites/Velha.png" id="6_nrvv5"]
 [ext_resource type="Texture2D" uid="uid://17qakjxbpsec" path="res://Sprites/MundodosCeus/Sprites/Magrelinho.png" id="6_omqbr"]
@@ -18,6 +19,103 @@
 radius = 80.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qeb26"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxdkx"]
+atlas = ExtResource("4_5phsk")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oa5wt"]
+atlas = ExtResource("4_5phsk")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_makx7"]
+atlas = ExtResource("4_5phsk")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt1g8"]
+atlas = ExtResource("4_5phsk")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6e6r"]
+atlas = ExtResource("4_5phsk")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysn0j"]
+atlas = ExtResource("5_qqone")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iiqu8"]
+atlas = ExtResource("5_qqone")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0kri"]
+atlas = ExtResource("5_qqone")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxxmp"]
+atlas = ExtResource("5_qqone")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxjgw"]
+atlas = ExtResource("5_qqone")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l182v"]
+atlas = ExtResource("5_qqone")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dg4oj"]
+atlas = ExtResource("5_qqone")
+region = Rect2(192, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vgsm8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxdkx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oa5wt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_makx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt1g8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6e6r")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysn0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iiqu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0kri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxxmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxjgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l182v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dg4oj")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2yyqk"]
 size = Vector2(1282, 92)
@@ -431,9 +529,6 @@ texture = ExtResource("2_q5wgq")
 position = Vector2(632, 562)
 script = ExtResource("3_bfatd")
 
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-texture = ExtResource("4_tktij")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-1, -8)
 shape = SubResource("CircleShape2D_w8b2p")
@@ -446,6 +541,11 @@ scale = Vector2(1.2, 2.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
 shape = SubResource("CircleShape2D_qeb26")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_vgsm8")
+animation = &"walk"
+frame_progress = 0.851831
 
 [node name="Teto" type="StaticBody2D" parent="."]
 
